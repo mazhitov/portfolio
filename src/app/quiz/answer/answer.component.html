@@ -1,0 +1,26 @@
+<div class="card-body pb-2" appCorrectOrIncorrectAnswer="{{ statusOfAnswer }}">
+  #{{ index+1 }}. {{ question.questionText }} ?
+  <form (ngSubmit)="onClickAnswer()" >
+    <div class="form-row align-items-center">
+      <div class="col-8 my-1">
+        <input type="text"
+               class="form-control"
+               id="inlineFormInputName"
+               name="answerInput"
+               placeholder="Your answer..."
+               [(ngModel)]="answerInput"
+        >
+      </div>
+      <div class="col-4 my-1">
+        <button type="submit" class="btn btn-primary"
+                [disabled]="answerInput === '' || submit"
+        >Answer</button>
+      </div>
+      <div class="pl-2" appShowHelpTextDirective>
+        <div style="display:none;"> <span class="text-dark">{{ getQuestionHelpText() }}</span> </div>
+        <button type="button" class="btn btn-primary">Help</button>
+      </div>
+    </div>
+  </form>
+</div>
+

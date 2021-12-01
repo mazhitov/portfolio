@@ -8,6 +8,12 @@ import { HomeComponent } from './home/home.component';
 import { PortfolioService } from './shared/portfolio.service';
 import { BlackjackComponent } from './blackjack/blackjack.component';
 import { CardComponent } from './blackjack/card/card.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { QuestionsComponent } from './quiz/questions/questions.component';
+import { CorrectOrIncorrectAnswerDirective } from './quiz/directives/correctOrIncorrectAnswer.directive';
+import { ShowHelpTextDirective } from './quiz/directives/showHelpText';
+import { AnswerComponent } from './quiz/answer/answer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,10 +22,16 @@ import { CardComponent } from './blackjack/card/card.component';
     FooterComponent,
     HomeComponent,
     BlackjackComponent,
-    CardComponent
+    CardComponent,
+    QuizComponent,
+    QuestionsComponent,
+    CorrectOrIncorrectAnswerDirective,
+    ShowHelpTextDirective,
+    AnswerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [PortfolioService],
   bootstrap: [AppComponent]

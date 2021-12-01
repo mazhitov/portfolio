@@ -1,0 +1,5 @@
+<div class="card mb-2" *ngFor="let question of questions let i = index">
+  <div class="p-1">
+    <app-answer [question]="question" [index] = i></app-answer>
+  </div>
+</div>
