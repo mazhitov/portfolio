@@ -1,0 +1,30 @@
+<div class="container-sm">
+  <div class="row p-4">
+    <div class="col-6">
+      <button class="btn btn-primary mr-2" (click)="onClickStart()">Start</button>
+      <button class="btn btn-danger mr-2" (click)="onClickStop()">Stop</button>
+      <button class="btn btn-secondary mr-2" (click)="onClickReset()">Reset</button>
+    </div>
+    <div class="col-6">
+      <form>
+        <div class="form-group">
+          <input type="number" class="form-control" name="bet" placeholder="bet" [(ngModel)]="bet">
+        </div>
+        <label class="mr-2">
+          <input type="radio"  name="color" value="red" [(ngModel)]="color"> Red
+        </label>
+        <label class="mr-2">
+          <input type="radio"  name="color" value="black" [(ngModel)]="color"> Black
+        </label>
+        <label class="mr-2">
+          <input type="radio" name="color" value="zero" [(ngModel)]="color"> Zero
+        </label>
+        <label class="mr-2">
+          Balance: {{ balance }}
+        </label>
+      </form>
+    </div>
+  </div>
+  <hr>
+  <div class="numberBlock" *ngFor="let number of resultNumbers" [appColor] = "number">{{ number }}</div>
+</div>

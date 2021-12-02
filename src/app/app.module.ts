@@ -14,6 +14,18 @@ import { CorrectOrIncorrectAnswerDirective } from './quiz/directives/correctOrIn
 import { ShowHelpTextDirective } from './quiz/directives/showHelpText';
 import { AnswerComponent } from './quiz/answer/answer.component';
 import { FormsModule } from '@angular/forms';
+import { RouletteComponent } from './roulette/roulette.component';
+import { ColorDirective } from './roulette/directives/color.directive';
+import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found.component';
+
+const routes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'blackjack', component: BlackjackComponent},
+  {path: 'quiz', component: QuizComponent},
+  {path: 'roulette', component: RouletteComponent},
+  {path: '**', component: NotFoundComponent}
+];
 
 @NgModule({
   declarations: [
@@ -27,13 +39,18 @@ import { FormsModule } from '@angular/forms';
     QuestionsComponent,
     CorrectOrIncorrectAnswerDirective,
     ShowHelpTextDirective,
-    AnswerComponent
+    AnswerComponent,
+    RouletteComponent,
+    ColorDirective,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [PortfolioService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

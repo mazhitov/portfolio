@@ -1,11 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">My PortFolio</a>
+  <a class="navbar-brand" routerLink="/">My PortFolio</a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-link" href="#">BlackJack</a>
-      <a class="nav-link" href="#">Testing</a>
-      <a class="nav-link" href="#">Roulette</a>
+      <a class="nav-link" routerLink="/" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+      >Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link" routerLink="/blackjack">BlackJack</a>
+      <a class="nav-link" routerLink="/quiz">Testing</a>
+      <a class="nav-link" routerLink="/roulette">Roulette</a>
     </div>
   </div>
 </nav>

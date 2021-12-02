@@ -1,5 +1,6 @@
-import { Question } from './Question.model';
+
 import { EventEmitter } from '@angular/core';
+import { Question } from './question.model';
 
 export class QuestionsService {
   resultChange = new EventEmitter<number>();
