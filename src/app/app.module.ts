@@ -18,12 +18,16 @@ import { RouletteComponent } from './roulette/roulette.component';
 import { ColorDirective } from './roulette/directives/color.directive';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found.component';
+import { RouletteService } from './roulette/shared/roulette.service';
+import { ModalComponent } from './ui/modal/modal.component';
+import { DonatComponent } from './donat.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'blackjack', component: BlackjackComponent},
   {path: 'quiz', component: QuizComponent},
   {path: 'roulette', component: RouletteComponent},
+  {path: 'donat', component: DonatComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
@@ -42,14 +46,16 @@ const routes: Routes = [
     AnswerComponent,
     RouletteComponent,
     ColorDirective,
-    NotFoundComponent
+    NotFoundComponent,
+    ModalComponent,
+    DonatComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [PortfolioService],
+  providers: [PortfolioService, RouletteService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
