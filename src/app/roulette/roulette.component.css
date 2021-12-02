@@ -1,0 +1,19 @@
+.numberBlock {
+  display: inline-block;
+  text-align: center;
+  margin: 0 10px 10px 0;
+  width: 80px;
+  height: 80px;
+  font-size: 16px;
+  line-height: 80px;
+  color: #fff;
+}
+.red {
+  background: red;
+}
+.black {
+  background: black;
+}
+.zero {
+  background: green;
+}

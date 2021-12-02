@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouletteService } from './shared/roulette.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-roulette',
@@ -11,7 +12,9 @@ export class RouletteComponent implements OnInit {
   balance:number = 100;
   bet:number = 1;
   resultNumbers: number[] = [];
-  constructor(private rouletteService: RouletteService) {}
+  modalOpen = false;
+
+  constructor(private rouletteService: RouletteService, private router: Router) {}
 
   ngOnInit() {
     this.rouletteService.newNumber.subscribe(number => {
@@ -43,5 +46,17 @@ export class RouletteComponent implements OnInit {
     } else {
       this.balance-=this.bet;
     }
+  }
+
+  openModal() {
+    this.modalOpen = true;
+  }
+
+  closeModal() {
+    this.modalOpen = false;
+  }
+
+  onCLickDonat() {
+    void this.router.navigate(['/donat']);
   }
 }

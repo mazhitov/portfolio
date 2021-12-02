@@ -3,7 +3,7 @@
 </div>
 <hr>
 <p><b>Score:</b> {{ getScoreCards() }} </p>
-<button (click)="onGiveAnotherCard()" [disabled]="getScoreCards() >=21" style="margin-right: 10px">Give another card</button>
-<button (click)="onReset()">Reset</button>
+<button class="btn btn-success" (click)="onGiveAnotherCard()" [disabled]="getScoreCards() >=21" style="margin-right: 10px">Give another card</button>
+<button class="btn btn-danger" (click)="onReset()">Reset</button>
 
 <p>{{ showResult() }}</p>
