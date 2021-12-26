@@ -2,8 +2,7 @@
   <app-card *ngFor="let card of currentCards" [rank]="card.rank" [suit]="card.suit"></app-card>
 </div>
 <hr>
-<p><b>Score:</b> {{ getScoreCards() }} </p>
+<p><strong>Score:</strong> {{ getScoreCards() }} </p>
 <button class="btn btn-success" (click)="onGiveAnotherCard()" [disabled]="getScoreCards() >=21" style="margin-right: 10px">Give another card</button>
 <button class="btn btn-danger" (click)="onReset()">Reset</button>
-
 <p>{{ showResult() }}</p>
